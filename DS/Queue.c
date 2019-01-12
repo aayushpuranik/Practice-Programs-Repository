@@ -14,7 +14,6 @@ struct Queue *CreateQueue(int capacity){
 		printf("memory issue\n");
 		return;
 	}
-	
 	q->capacity = capacity;
 	q->front = q->rear = -1;
 	q->array = malloc(q->capacity * sizeof(int));
@@ -64,7 +63,6 @@ int Dequeue(struct Queue *q){
 }
 
 void traverse(struct Queue *q){
-	int index = 0;
 	int front = q->front;
 	
 	if(IsEmpty(q)){
@@ -138,13 +136,11 @@ int main(){
 	printf("Dequeue of :%d\n",Dequeue(q));
 	printf("QueueSize = %d\n",QueueSize(q));
 	
-	printf("\nq->front = %d\n\n",q->front);
 	printf("Dequeue of :%d\n",Dequeue(q));
 	printf("QueueSize = %d\n",QueueSize(q));
 	
 	printf("\n traversing \n");
 	traverse(q);
-	
 	
 	return 0;
 }
